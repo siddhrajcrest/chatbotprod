@@ -3,7 +3,6 @@ fetch(
 ).then((res) => {
   res.text().then((d) => {
     const files = JSON.parse(d);
-    console.log(files)
     const mainChunk = document.createElement("script");
     mainChunk.src = `https://cdn.jsdelivr.net/gh/siddhrajcrest/chatbotnew/build${files.files["main.js"]}`;
     document.head.appendChild(mainChunk);
