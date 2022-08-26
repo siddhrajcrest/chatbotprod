@@ -47,14 +47,14 @@ export const Content = (props) => {
         props.messageList &&
         props.messageList.length > 0 &&
         props.messageList.map((item, i) => (
-          <>
+          <div key={i}>
             <p className={i % 2 === 0 ? "message-recieved" : "message-sent"}>
               {item.message}
             </p>
             <p className={i % 2 === 0 ? "time-recieved" : "time-sent"}>
               {i % 2 === 0 ? " messaged on" : " messaged on"} {item.time}
             </p>
-          </>
+          </div>
         ))
       ) : (
         <div className="predefined-questions">

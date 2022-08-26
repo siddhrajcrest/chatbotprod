@@ -28,7 +28,7 @@ export default function App(props) {
       >
         <Popover
           placement="topRight"
-          style={{position: 'fixed',  marginRight: '500px' }}
+          style={{display:'block',position: 'fixed',  marginRight: '500px' }}
           content={<WidgetContent name={props.name}  />}
           visible={widgetVisible}
         >

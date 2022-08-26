@@ -4,7 +4,6 @@ import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { Input, Button, message } from "antd";
 export const SendMessage = (props) => {
-  
   const sendMessage = (value) => {
     if (value !== "") {
       var now = new Date();
@@ -77,10 +76,15 @@ export const SendMessage = (props) => {
             {props.actionStarted && props.flow === "3" && (
               <div style={{ width: "100%", textAlign: "center" }}>
                 <Button
-                  onClick={() => props.setphoneForm((prev) => !prev)}
+                  onClick={() => {
+                    props.setphoneForm((prev) => !prev);
+                    var objDiv = document.getElementById("message");
+                    console.log(objDiv.scrollHeight);
+                    objDiv.scrollTo(0,objDiv.scrollHeight)
+                  }}
                   type="primary"
                 >
-                  {props.phoneForm?"Switch to Messenger":"Switch to SMS"}
+                  {props.phoneForm ? "Switch to Messenger" : "Switch to SMS"}
                 </Button>
               </div>
             )}
