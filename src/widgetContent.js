@@ -10,8 +10,7 @@ export const WidgetContent = (props) => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [PhoneValue, setPhoneValue] = useState("");
   const [phoneForm, setphoneForm] = useState(false);
-  const [flow, setFlow] = useState("3");
-  console.log(actionStarted || phoneNumber === "");
+  const [flow, setFlow] = useState("1");
   return (
     <div className="mainContainer">
       <Heading
