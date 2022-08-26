@@ -1,25 +1,51 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { Button, Popover } from 'antd';
+import { MessageOutlined, CloseOutlined } from '@ant-design/icons';
+import { WidgetContent } from './widgetContent';
+import './style.css';
 
-function App() {
+export default function App() {
+  const [widgetVisible, setwidgetVisible] = useState(false);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div style={{ height: '100%' }}>
+      <div
+        style={{
+          position: 'fixed',
+          bottom: 0,
+          marginBottom: '65px',
+          right: 0,
+          marginRight: '50px',
+        }}
+      ></div>
+      <div
+        style={{
+          position: 'absolute',
+          bottom: 0,
+          marginBottom: '30px',
+          right: 0,
+          marginRight: '50px',
+        }}
+      >
+        <Popover
+          placement="topRight"
+          style={{ display:'block',position: 'absolute', marginRight: '500px' }}
+          content={<WidgetContent />}
+          visible={widgetVisible}
         >
-          Learn React
-        </a>
-      </header>
+          {' '}
+          <Button
+            size="large"
+            type="primary"
+            style={{
+              borderRadius: '30px',
+              borderTopRightRadius: '5px',
+            }}
+            onClick={() => setwidgetVisible((prev) => !prev)}
+          >
+            {widgetVisible ? <CloseOutlined /> : <MessageOutlined />}
+          </Button>
+        </Popover>
+      </div>
     </div>
   );
 }
-
-export default App;

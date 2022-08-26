@@ -1,17 +1,25 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React, { StrictMode } from "react";
+import ReactDOM from "react-dom";
+import "antd/dist/antd.css";
+import App from "./App";
+const widget = document.createElement("div");
+widget.id = "chatbot-widget";
+widget.style.position = "fixed";
+widget.style.right = "0px";
+widget.style.bottom = "0px";
+document.body.appendChild(widget);
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+
+const react=document.createElement("script")
+react.src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"
+document.body.appendChild(react)
+const react_dom=document.createElement("script")
+react_dom.src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"
+document.body.appendChild(react_dom)
+
+const root = ReactDOM.createRoot(document.getElementById('chatbot-widget'));
 root.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
