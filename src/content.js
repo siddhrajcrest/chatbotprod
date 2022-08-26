@@ -86,6 +86,7 @@ export const Content = (props) => {
             setPhoneNumber={props.setPhoneNumber}
             showMessage={true}
             flow={props.flow}
+            name={props.name}
           />
         )}
       {props.phoneForm && (
@@ -94,6 +95,7 @@ export const Content = (props) => {
           setPhoneNumber={props.setPhoneNumber}
           showMessage={false}
           flow={props.flow}
+          name={props.name}
         />
       )}
     </div>

@@ -19,6 +19,7 @@ export const WidgetContent = (props) => {
         setMessageList={setMessageList}
         setPhoneNumber={setPhoneNumber}
         setPhoneValue={setPhoneValue}
+        name={props.name}
       />
       <Content
         messageList={messageList}
@@ -30,6 +31,7 @@ export const WidgetContent = (props) => {
         flow={flow}
         phoneForm={phoneForm}
         setphoneForm={setphoneForm}
+        name={props.name}
       />
       <div>
         {flow === "1" &&

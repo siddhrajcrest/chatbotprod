@@ -4,11 +4,11 @@ import { MessageOutlined, CloseOutlined } from '@ant-design/icons';
 import { WidgetContent } from './widgetContent';
 import './style.css';
 
-export default function App() {
+export default function App(props) {
   const [widgetVisible, setwidgetVisible] = useState(false);
   return (
     <div style={{ height: '100%' }}>
-      <div
+      {/* <div
         style={{
           position: 'fixed',
           bottom: 0,
@@ -16,10 +16,10 @@ export default function App() {
           right: 0,
           marginRight: '50px',
         }}
-      ></div>
+      ></div> */}
       <div
         style={{
-          position: 'absolute',
+          position: 'fixed',
           bottom: 0,
           marginBottom: '30px',
           right: 0,
@@ -28,8 +28,8 @@ export default function App() {
       >
         <Popover
           placement="topRight"
-          style={{ display:'block',position: 'absolute', marginRight: '500px' }}
-          content={<WidgetContent />}
+          style={{position: 'fixed',  marginRight: '500px' }}
+          content={<WidgetContent name={props.name}  />}
           visible={widgetVisible}
         >
           {' '}

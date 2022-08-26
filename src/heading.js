@@ -1,27 +1,44 @@
-import React from 'react';
-import { MessageTwoTone, LeftOutlined } from '@ant-design/icons';
+import React from "react";
+import {
+  MessageTwoTone,
+  LeftOutlined,
+  CloudDownloadOutlined,
+} from "@ant-design/icons";
+import { Tooltip } from "antd";
 export const Heading = (props) => {
   return (
     <div className="heading">
-      <div style={{ display: 'flex' }}>
-        {' '}
+      <div style={{ display: "flex" }}>
+        {" "}
         {props.actionStarted && (
           <LeftOutlined
-            style={{ marginRight: '7px', marginTop: '11px', cursor: 'pointer' }}
+            style={{ marginRight: "7px", marginTop: "11px", cursor: "pointer" }}
             onClick={() => {
               // props.setMessageList([]);
               props.setactionStarted((prev) => !prev);
-              props.setPhoneNumber('');
+              props.setPhoneNumber("");
 
-              props.setPhoneValue('');
+              props.setPhoneValue("");
             }}
           />
         )}
-        <h2>Instant Messenger 👇 </h2>
+       <div className="heading-div" > <h2>Instant Messenger 👇 </h2>
+        <Tooltip title="Download your Messages">
+          <CloudDownloadOutlined
+            style={{
+              marginTop: "10px",
+              marginRight:'10px',
+              // color: "rgb(142, 11, 97)",
+              cursor: "pointer",
+              fontSize:'large'
+            }}
+          />
+        </Tooltip>
+        </div>
       </div>
       <p>
-        <MessageTwoTone /> Start the conversation and our representative will
-        contact you soon
+        <MessageTwoTone /> Start the conversation and {props.name}{" "}
+        representative will contact you soon
       </p>
     </div>
   );

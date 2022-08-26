@@ -53,7 +53,7 @@ const PhoneForm = (props) => {
         </Button>
       </Form>
       <p style={{ fontSize: "9px" }}>
-        By submitting. you authorize to send text messages with offers &
+        By submitting. you authorize {props.name} to send text messages with offers &
         other information. possibly using automated technology, to the number
         you provided. Message/data rates apply. Consent is not a condition of
         purchase.
