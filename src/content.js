@@ -87,15 +87,17 @@ export const Content = (props) => {
             showMessage={true}
             flow={props.flow}
             name={props.name}
+            apiData={props.apiData}
           />
         )}
-      {props.phoneForm && (
+      {props.actionStarted && props.phoneForm && (
         <PhoneForm
           handlePreDefinedMessages={handlePreDefinedMessages}
           setPhoneNumber={props.setPhoneNumber}
           showMessage={false}
           flow={props.flow}
           name={props.name}
+          apiData={props.apiData}
         />
       )}
     </div>

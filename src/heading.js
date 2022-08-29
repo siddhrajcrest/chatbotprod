@@ -16,9 +16,9 @@ export const Heading = (props) => {
             onClick={() => {
               // props.setMessageList([]);
               props.setactionStarted((prev) => !prev);
-              props.setPhoneNumber("");
+              // props.setPhoneNumber("");
 
-              props.setPhoneValue("");
+              // props.setPhoneValue("");
             }}
           />
         )}

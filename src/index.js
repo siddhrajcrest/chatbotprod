@@ -1,5 +1,6 @@
 import React, { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
+import { ApolloClient, InMemoryCache, ApolloProvider, gql } from '@apollo/client';
 import "antd/dist/antd.css";
 import App from "./App";
 const widget = document.createElement("div");
@@ -12,9 +13,16 @@ document.body.appendChild(widget);
 
 const getId=document.getElementById("business_id");
 
+const client = new ApolloClient({
+  uri: 'http://localhost:5000/chat_api',
+  cache: new InMemoryCache(),
+});
+
 const root = ReactDOM.createRoot(document.getElementById('chatbot-widget'));
 root.render(
+  <ApolloProvider client={client} >
   <React.StrictMode>
-    <App name={getId.textContent} />
+    <App id={getId.textContent} />
   </React.StrictMode>
+  </ApolloProvider>
 );
